@@ -1,0 +1,9 @@
+.filterContainer {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 20px;
+  display: flex;
+  font-display: auto;
+  flex-direction: column;
+  width: 300px;
+}
