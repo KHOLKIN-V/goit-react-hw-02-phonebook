@@ -1,8 +1,8 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import cs from "./ContactBook.module.css";
 
-const ContactBook = ({ data }) => {
+const ContactBook = ({ data, onDelete }) => {
   return (
     <>
       <h2 className={cs.title}>Contacts</h2>
@@ -15,7 +15,7 @@ const ContactBook = ({ data }) => {
                 className={cs.btnDeleteContact}
                 type="button"
                 name="delete"
-                // onClick={() => onRemoveContact(contact.id)}
+                onClick={() => onDelete(id)}
               >
                 DELETE
               </button>
@@ -25,6 +25,17 @@ const ContactBook = ({ data }) => {
       </ul>
     </>
   );
+};
+
+ContactBook.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    })
+  ),
+  onDelete: PropTypes.func.isRequired,
 };
 
 export default ContactBook;

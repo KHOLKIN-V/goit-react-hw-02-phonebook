@@ -45,6 +45,12 @@ class App extends Component {
 reshapeFilter = (e) => {
     this.setState({ filter: e });
   };
+
+  deleteContact = (deleteId) => {
+    this.setState(old => ({
+      contacts: old.contacts.filter(e => e.id !== deleteId),
+    }));
+  }
   
   render() {
     const filtered = this.filterContacts();
@@ -54,8 +60,8 @@ reshapeFilter = (e) => {
       <AddContactForm submit={this.formSubmit} inputId={1}/>
       <Filter value={this.state.filter} onFilter={this.reshapeFilter}/>
       {filtered.length >= 0 ? 
-          <ContactBook data={filtered} />
-         : <ContactBook data={this.state.contacts}/>
+          <ContactBook data={filtered} onDelete={this.deleteContact}/>
+         : <ContactBook data={this.state.contacts} onDelete={this.deleteContact}/>
       }
       </>
     );

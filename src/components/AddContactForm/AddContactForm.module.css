@@ -12,8 +12,7 @@
 .form {
   display: inline-block;
   flex-direction: column;
-  box-sizing: border-box;
-  width: 300px;
+  width: 280px;
   height: auto;
   padding: 20px;
   margin-left: 20px;

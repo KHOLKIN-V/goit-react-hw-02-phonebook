@@ -11,13 +11,14 @@
 }
 .item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
   width: max-content;
   width: 300px;
   padding: 10px;
   margin: 0;
   margin-bottom: 20px;
-  border: 1px solid red;
+  border: 1px solid rgb(125, 182, 18);
 }
 .btnDeleteContact {
   font-size: 13px;
