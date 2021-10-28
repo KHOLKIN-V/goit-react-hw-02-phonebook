@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ContactItem from "../ContactItem/ContactItem";
 import cs from "./ContactBook.module.css";
 
 const ContactBook = ({ data, onDelete }) => {
@@ -10,15 +11,11 @@ const ContactBook = ({ data, onDelete }) => {
         {data.map(({ name, number, id }) => (
           <>
             <li className={cs.item} key={id}>
-              {name}: {number}
-              <button
-                className={cs.btnDeleteContact}
-                type="button"
-                name="delete"
-                onClick={() => onDelete(id)}
-              >
-                DELETE
-              </button>
+              <ContactItem
+                name={name}
+                number={number}
+                onDelete={() => onDelete(id)}
+              />
             </li>
           </>
         ))}

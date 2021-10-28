@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { nanoid } from "nanoid";
 import PropTypes from "prop-types";
 import cs from "./AddContactForm.module.css";
 
@@ -8,8 +7,6 @@ class AddContactForm extends Component {
     name: "",
     number: "",
   };
-
-  nameInputId = nanoid();
 
   addInputContact = (e) => {
     const { name, value } = e.currentTarget;
@@ -36,7 +33,7 @@ class AddContactForm extends Component {
       <>
         <h1 className={cs.title}>Phonebook</h1>
         <form className={cs.form} onSubmit={this.submitContact}>
-          <label htmlFor={this.nameInputId} className={cs.inputTitle}>
+          <label className={cs.inputTitle}>
             Name
             <br />
             <input
@@ -72,8 +69,9 @@ class AddContactForm extends Component {
 }
 
 AddContactForm.propTypes = {
-  name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  number: PropTypes.string,
+  submit: PropTypes.func.isRequired,
 };
 
 export default AddContactForm;
