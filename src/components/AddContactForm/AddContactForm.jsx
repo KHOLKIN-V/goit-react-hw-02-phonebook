@@ -69,8 +69,6 @@ class AddContactForm extends Component {
 }
 
 AddContactForm.propTypes = {
-  name: PropTypes.string,
-  number: PropTypes.string,
   submit: PropTypes.func.isRequired,
 };
 

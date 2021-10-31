@@ -14,7 +14,8 @@ const ContactBook = ({ data, onDelete }) => {
               <ContactItem
                 name={name}
                 number={number}
-                onDelete={() => onDelete(id)}
+                onDelete={onDelete}
+                id={id}
               />
             </li>
           </>

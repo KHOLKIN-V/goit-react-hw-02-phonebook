@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import cs from "./ContactItem.module.css";
 
-const ContactItem = ({ name, number, onDelete }) => {
+const ContactItem = ({ name, number, onDelete, id }) => {
   return (
     <>
       {name}: {number}
@@ -9,7 +9,7 @@ const ContactItem = ({ name, number, onDelete }) => {
         className={cs.btnDeleteContact}
         type="button"
         name="delete"
-        onClick={onDelete}
+        onClick={() => onDelete(id)}
       >
         DELETE
       </button>
